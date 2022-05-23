@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Radio Canada', sans-serif;
+}
+
+.secTodo{
+    height: 100vh;
+    background-image: url(imagenes/portada/portada2.jpg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+.card__master{
+    width: 90%;
+    height: 600px;
+    /* background-color: blue; */
+    background-color: #fff;
+    box-shadow: 0 0 35px rgb(0, 0, 0);
+    border-radius: 15px;
+}
+
+.card__secciones{
+    display: flex;
+    /* margin-top: 50px; */
+    /* justify-content: space-evenly; */
+    /* align-items: center; */
+}
+
+.chico{
+    height: 400px;
+}
+
+.firstcard__all{
+    background-image:linear-gradient(to right,#013d96d5,#0066ff), url(imagenes/lugares/newYork.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 96vh;
+    padding-top: 50px;
+    /* border-radius: 15px; */
+    color: #fff;
+
+}
+
+.firstcard__all h1{
+    /* margin-top: 50px; */
+    margin-bottom: 15px;
+    margin-left: 15px;
+    font-size: 35px;
+}
+
+.firstcard__all p{
+    width: 600px;
+    font-size: 18px;
+    margin-left: 15px;
+
+}
+
+.sectcard__all{
+    padding-top: 50px;
+    background-image: url(imagenes/wave/wave.svg);
+
+    /* height: 100%; */
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sectcard__all input:first-child{
+    /* width: 90%; */
+    /* border: none; */
+    /* margin-right: 20px; */
+    width: 450px;
+    margin-left: 25px;
+    border-radius: 15px;
+    padding: 10px 15px 10px 15px;
+    border-bottom: 2px solid #000;
+}
+
+.boton{
+    /* margin-right: 15px; */
+    margin-left: 15px;
+    margin-right: 5px;
+    border: none;
+    padding: 15px 20px 15px 20px;
+    cursor: pointer;
+    background-color: rgb(0, 153, 255);
+    color: #fff;
+    border-radius: 2px;
+}
+
+.mostrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.card{
+    height: 420px;
+    width: 300px;
+    box-shadow: 0 0 6px rgba(0,0,0,.5);
+}
+
+.card ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+}
+
+.card ul li{
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.card img{
+    width: 100%;
+    height: 250px;
+}
+
+.botonCompra{
+    width: 50%;
+    padding: 20px 25px 20px 25px;
+    background-color: #0066ff;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    /* margin-left: 10px; */
+    text-decoration: none;
+    /* margin: auto; */
+}
+
+.botonCompra:hover{
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 0 6px rgba(0,0,0,.5);
+    /* transition: (500ms); */
+}
+
+.errorlista{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 50px 20px 50px;
+    background-color: rgb(243, 10, 10);
+    color: #fff;
+}

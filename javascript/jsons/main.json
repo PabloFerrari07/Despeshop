@@ -1,0 +1,27 @@
+[
+    { 
+    "nombre": "japon",
+    "valor": 40000,
+    "imagen": "javascript/jsons/imagenes/lugares/japon.jpg"
+},
+{ 
+    "nombre": "roma",
+    "valor": 68000,
+    "imagen": "javascript/jsons/imagenes/lugares/roma.jpg"
+},
+{ 
+    "nombre": "londres",
+    "valor": 60000,
+    "imagen": "javascript/jsons/imagenes/lugares/londres.jpg"
+},
+{ 
+    "nombre": "paris",
+    "valor": 70000,
+    "imagen": "javascript/jsons/imagenes/lugares/paris.jpg"
+},
+{ 
+    "nombre": "new york",
+    "valor": 95000,
+    "imagen": "javascript/jsons/imagenes/lugares/newYork.jpg"
+}
+]
