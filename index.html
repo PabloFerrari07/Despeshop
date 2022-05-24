@@ -17,7 +17,7 @@
 <body>
 
     <section class="secTodo">
-        <div class="card__master">
+        <div class="card__master" id="card_master">
             <div class="card__secciones">
                 <div class="firstcard__all">
                     <div class="header">
@@ -34,6 +34,28 @@
                      <input type="submit" value="buscar" class="boton" id="boton">
                      <div id="mostrar" class="mostrar"></div>
                  </div>
+            </div>
+            <div class="cotizador"  id="cotizador">
+                <form action="" class="form_cotizador">
+                    <div id="mostrarPais" >
+                      
+                    </div>
+                    <div class="cargar_img">
+
+                    </div>
+                    <div class="inputs_tarjeta" id="cotizador">
+                        <input type="text" id="tarjeta" placeholder="tu tarjeta" disabled="">
+                        <select name="" id="">
+                            <option value="">Cuotas</option>
+                            <option value="">3</option>
+                            <option value="">6</option>
+                            <option value="">12</option>
+                        </select>
+                    </div>
+                    <div class="input_boton">
+                        <input type="button" id="pagar" value="realizar compra" >
+                    </div>
+                </form>
             </div>
         </div>
     </section>
