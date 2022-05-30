@@ -5,7 +5,7 @@ const mostrar = document.getElementById('mostrar');
 
 
 const paises = async()=>{
-    const responsepaises = await fetch("/javascript/jsons/main.json")
+    const responsepaises = await fetch("/javascript/jsons/main.json");
     const pais = await responsepaises.json();
     
     function buscarPais(){
@@ -21,6 +21,7 @@ const paises = async()=>{
                     let nombrePais = paisbuscar.nombre.toLowerCase();
 
                     if(nombrePais.indexOf(texto) !== -1){
+          
                         mostrar.innerHTML += `
                         <div class="card">
                         <ul>
@@ -35,35 +36,78 @@ const paises = async()=>{
 
                         const botonCompra = document.getElementById('botonCompra');
 
-                        class recojerYmostrarpais {
-
-                            constructor(paiselejido){
-                                this.pais = paiselejido
-                            }
-
-                            mostrarDatosenInput(){
-                                const paisSelecct = document.querySelector('#paisSelecct');
-                                paisSelecct.textContent = "";
-                            };
-                        }
-
                         class recojerYmostrarpaislocal{
 
-                            constructor(paises){
+                            constructor(paises, imagenes){
                                 this.pais = paises;
-                                // this.email = email;
+                                this.imagen = imagenes;
                             }
                             
                             pedirdatos(){
                                 const mostrarco = document.getElementById('mostrarPais');
                                 const mostrarpais = document.createElement('div');
-                                mostrarpais.textContent = "Tu seleccion fue" + this.pais;
-                                mostrarco.appendChild(mostrarpais)
+
+                                mostrarpais.className = "Modificar_div";
+                                mostrarpais.textContent = "Asique vas a " + this.pais;
+                                mostrarco.appendChild(mostrarpais);
+                         
+                                if(mostrarco.contains(mostrarpais) ){
+
+                                    setTimeout(()=>{
+                                        mostrarpais.textContent = '';
+                                       },3000);
+
+                                       const mostrarImagen = document.getElementById('cargarImg');
+                                       mostrarImagen.innerHTML = `
+                                       <ul class="listaPublicar">
+                                       <div class="caja_hover">
+                                       <li class="limostrar">${paisbuscar.nombre}</li>
+                                       </div>
+                                       <li class="liimg"><img src="${paisbuscar.imagen}" class="chico"></li>
+                                       </ul>
+                                       `
+                                }
+                 
                             };
+
+                            
+                            // cuentas(){
+                            //     const select = document.getElementById('seleccion');
+                            //     select.innerHTML = `
+                            //     <option value="">Cuotas</option>
+                            //     <option value="">3</option>
+                            //     <option value="">6</option>
+                            //     <option value="">12</option>
+                            //     `
+                            // }
                         };
+
+                    
+
+                        // const select = document.getElementById('seleccion');
+                        const opcion = document.querySelectorAll('#opcion');
+                      
+                        function realizarComprar(){
+                            const precio = paisbuscar.valor;
+                            if(precio === paisbuscar.valor){
+                                // const precioFinal = precio/opcion.value;
+                                // alert(precioFinal.value)
+                                const select = document.getElementById('seleccion');
+                                const perciofinal =parseInt(precio/select.value);
+                                const tarjeta = document.getElementById('tarjeta');
+
+                                Swal.fire({
+                                    title: 'Su compra fue realizada!',
+                                    text: 'Su precio final es de $'+perciofinal + ' al mes' + ' con tu tarjeta: ' + tarjeta.value,
+                                    icon: 'success',
+                                    confirmButtonText: 'Cool'
+                                  })
+                            }
+                        }
                         
 
                         botonCompra.addEventListener('click',()=>{
+              
                             const cotizador = document.querySelector('#cotizador');
                             cotizador.className = 'duplicar';
 
@@ -78,7 +122,16 @@ const paises = async()=>{
                             const mostrarStorage = JSON.parse( localStorage.getItem('paises'));
                             const nuevoviaje = new recojerYmostrarpaislocal(mostrarStorage);
                             nuevoviaje.pedirdatos();
+                            // nuevoviaje.cuentas();
+                            const pagar = document.getElementById('pagar');
 
+                            pagar.addEventListener('click',realizarComprar)
+                           
+                            // const mostrarImagen = document.getElementById('cargarImg');
+                            // mostrarImagen.innerHTML = `
+                            // <img src="${paisbuscar.imagen}" class="chico">
+                            // `
+                
                         });
                     }
                 }
