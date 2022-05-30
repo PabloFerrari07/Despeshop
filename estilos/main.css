@@ -17,8 +17,8 @@
 }
 
 .card__master{
-    overflow: hidden;
     width: 90%;
+    overflow: hidden;
     overflow-y: scroll;
     height: 600px;
     /* background-color: blue; */
@@ -39,8 +39,8 @@
 }
 .duplicar{
     display: block;
-    margin: auto;
-    height: 600px;
+    /* margin: auto;
+    height: 600px; */
 
     margin-left: 105px;
 }
@@ -95,6 +95,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .input_boton input{
@@ -141,17 +142,15 @@
 .sectcard__all{
     padding-top: 50px;
     background-image: url(imagenes/wave/wave.svg);
-
-    /* height: 100%; */
+    overflow: hidden;
+    height: 615px;
     background-position: left;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .sectcard__all input:first-child{
-    /* width: 90%; */
-    /* border: none; */
-    /* margin-right: 20px; */
+
     width: 450px;
     margin-left: 25px;
     border-radius: 15px;
@@ -176,6 +175,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 15px;
+    padding-bottom: 150px;
 }
 
 .card{
@@ -243,8 +243,7 @@
 }
 
 .liimg{
-       /* position: static; */
-       /* overflow: hidden; */
+ 
        width: 100%;
 }
 
@@ -261,4 +260,15 @@
     justify-content: center;
     align-items: center;
     color: #fff;
+}
+
+#viaje{
+    width: 90%;
+    text-align: center;
+    /* border: none; */
+    /* border-bottom: 1px solid #2d2d2d; */
+    font-weight: bold;
+    color: #000;
+    font-size: 25px;
+    margin-top: 15px;
 }
