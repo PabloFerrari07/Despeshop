@@ -24,4 +24,31 @@
     "valor": 95000,
     "imagen": "javascript/jsons/imagenes/lugares/newYork.jpg"
 }
+,
+{ 
+    "nombre": "peru",
+    "valor": 25000,
+    "imagen": "javascript/jsons/imagenes/lugares/peru.jpg"
+},
+{ 
+    "nombre": "brasil",
+    "valor": 78000,
+    "imagen": "javascript/jsons/imagenes/lugares/brasil.jpg"
+},
+{ 
+    "nombre": "españa",
+    "valor": 95000,
+    "imagen": "javascript/jsons/imagenes/lugares/españa.jpg"
+},
+{ 
+    "nombre": "francia",
+    "valor": 95000,
+    "imagen": "javascript/jsons/imagenes/lugares/francia.jpg"
+},
+{ 
+    "nombre": "mexico",
+    "valor": 95000,
+    "imagen": "javascript/jsons/imagenes/lugares/mexico.jpg"
+}
+
 ]

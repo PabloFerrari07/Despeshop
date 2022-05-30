@@ -142,6 +142,7 @@ const paises = async()=>{
                     mostrar.innerHTML += `
                     <ul class="errorlista">
                     <li class="error">Pais no encontrado  </li>
+
                     </ul>
                     ` 
                 }
