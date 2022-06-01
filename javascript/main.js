@@ -17,20 +17,33 @@ const paises = async()=>{
                 mostrar.innerHTML = '';
 
                 const texto = buscador.value.toLowerCase();
+
+                
                 for(let paisbuscar of pais){
-                    let nombrePais = paisbuscar.nombre.toLowerCase();
+
                     if(texto === ''){
                  
                     }else{
 
+                        const nombrePais = paisbuscar.nombre;
+                        const precioPais = paisbuscar.valor;
+                        const imagenPais = paisbuscar.imagen;
+
+                   
+
                         if(nombrePais.indexOf(texto) !== -1){
+ 
+             
+             
+               
               
+                  
                             mostrar.innerHTML += `
-                            <div class="card">
+                            <div class="card" id="card">
                             <ul>
-                            <li>${paisbuscar.nombre}</li>
-                            <li>valor: $${paisbuscar.valor}  </li>
-                            <li><img src="${paisbuscar.imagen}" class="chico"></li>
+                            <li>${nombrePais}</li>
+                            <li>valor: $${precioPais} </li>
+                            <li><img src="${imagenPais}" class="chico"></li>
                             <a href="#" class="botonCompra" id="botonCompra">Comprar</a>
                             </ul>
                             </div>
@@ -39,40 +52,44 @@ const paises = async()=>{
     
                             const botonCompra = document.getElementById('botonCompra');
     
-                            class recojerYmostrarpaislocal{
     
-                                constructor(paises, imagenes){
-                                    this.pais = paises;
-                                    this.imagen = imagenes;
-                                }
-                                
-                                pedirdatos(){
-                                    const mostrarco = document.getElementById('mostrarPais');
-              
-                                    mostrarco.innerHTML = `
-                                    <input type="text" id="viaje" placeholder="${this.pais}" disabled="" ">
-                                    `
-                                   const mostrarImagen = document.getElementById('cargarImg');
-                                           mostrarImagen.innerHTML = `
-                                           <ul class="listaPublicar">
-                                           <div class="caja_hover">
-                                           <li class="limostrar">${paisbuscar.nombre}</li>
-                                           </div>
-                                           <li class="liimg"><img src="${paisbuscar.imagen}" class="chico"></li>
-                                           </ul>
-                                           `
-                                    
-                     
-                                };
-    
-                                
+                            // STORAGE
+
+                            function guardarStorage(){
+                    
+                                 localStorage.setItem('dato1',nombrePais)
+                                 localStorage.setItem('dato2',precioPais)
+                                 localStorage.setItem('dato3',imagenPais)
+                                const mostrate = document.getElementById('cargarImg');
+                                const nombrepais = localStorage.getItem('dato1');
+                                const preciopais = localStorage.getItem('dato2');
+                                const imagenpais = localStorage.getItem('dato3');
             
-                            };
-    
-                        
-    
-    
-    
+                                mostrate.innerHTML = `
+                                <ul class="listaPublicar">
+                                <div class="textosul">
+                                <li class="limostrar" >${nombrepais}</li>
+                                <li class="precioli">$${preciopais}</li>
+                                </div>
+
+                                <img  src="${imagenpais}" class="chicoDos">
+                                </ul>
+                    
+                                 `
+
+                                 Toastify({
+
+                                         text:'Seleccionaste ' + nombrepais,
+                                                
+                                         duration: 3000
+                                                
+                                        }).showToast();
+                                
+                            }
+
+                            
+                            // COMPRA
+                            
                           
                             function realizarComprar(){
                                 const precio = paisbuscar.valor;
@@ -105,27 +122,27 @@ const paises = async()=>{
                                   
     
                                 }
+
+                                const cotizador = document.querySelector('#cotizador');
+                                cotizador.innerHTML = '';
                             }
                             
-                     
+                            
+                            // BOTON
+                            
                             botonCompra.addEventListener('click',()=>{
-                    
+                        
     
                                     const cotizador = document.querySelector('#cotizador');
                             
                                     cotizador.className = 'duplicar';
-        
-                                    let pais = [];
-                             
-                                    const paisseleccionado = buscador.value.toLowerCase();
-                                    pais.push(paisseleccionado);
-                                    localStorage.setItem('paises', JSON.stringify(paisseleccionado))
-                                
-        
-                                    const mostrarStorage = JSON.parse( localStorage.getItem('paises'));
-                                    const nuevoviaje = new recojerYmostrarpaislocal(mostrarStorage);
-                                    nuevoviaje.pedirdatos();
-                                 
+
+
+                                    guardarStorage()
+
+                           
+                                    
+                                    
                                     const pagar = document.getElementById('pagar');
         
                                     pagar.addEventListener('click',realizarComprar)
@@ -133,7 +150,7 @@ const paises = async()=>{
                                 
     
                               
-                       
+                                 
                             });
                         }
                     }
@@ -150,7 +167,7 @@ const paises = async()=>{
                 
                
     
-    
+            
          
             
             
@@ -162,3 +179,6 @@ const paises = async()=>{
     }
     
     paises();
+
+    // localStorage.clear()
+

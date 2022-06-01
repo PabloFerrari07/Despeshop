@@ -233,37 +233,27 @@
     color: #fff;
 }
 
-
 .listaPublicar{
-    position: relative;
-    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 250px;
     list-style: none;
-    overflow: hidden;
+}
+
+.textosul{
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.liimg{
- 
-       width: 100%;
-}
-
-.caja_hover{
-    background-color: rgba(0,0,0,.5);
-    position: absolute;
-    top: 0;
-    left: 0;
+    justify-content: space-between;
     width: 100%;
-    font-weight: bold;
-    height: 100%;
-    font-size: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
+    border-bottom: 2px solid #7a7a79;
+    /* height: 100px; */
+    font-size: 25px;
+    margin-bottom: 25px;
 }
 
+.chicoDos{
+    height: 400px;
+    margin-bottom: 215px;
+}
 #viaje{
     width: 90%;
     text-align: center;
