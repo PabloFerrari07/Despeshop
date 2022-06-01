@@ -60,22 +60,9 @@ const paises = async()=>{
                                  localStorage.setItem('dato1',nombrePais)
                                  localStorage.setItem('dato2',precioPais)
                                  localStorage.setItem('dato3',imagenPais)
-                                const mostrate = document.getElementById('cargarImg');
-                                const nombrepais = localStorage.getItem('dato1');
-                                const preciopais = localStorage.getItem('dato2');
-                                const imagenpais = localStorage.getItem('dato3');
-            
-                                mostrate.innerHTML = `
-                                <ul class="listaPublicar">
-                                <div class="textosul">
-                                <li class="limostrar" >${nombrepais}</li>
-                                <li class="precioli">$${preciopais}</li>
-                                </div>
-
-                                <img  src="${imagenpais}" class="chicoDos">
-                                </ul>
-                    
-                                 `
+                               
+                                
+                                 const nombrepais = localStorage.getItem('dato1');
 
                                  Toastify({
 
@@ -87,6 +74,30 @@ const paises = async()=>{
                                 
                             }
 
+
+                            function mostrarStorage(){
+
+                                const mostrate = document.getElementById('cargarImg');
+                                const nombrepais = localStorage.getItem('dato1');
+                                const preciopais = localStorage.getItem('dato2');
+                                const imagenpais = localStorage.getItem('dato3');
+                                const mostrarPais = document.querySelector('#mostrarPais');
+                                mostrarPais.innerHTML = `
+                                <ul class="listaPublicar">
+                                <div class="textosul">
+                                <li> ${nombrepais}</li>
+                                <li>   ${preciopais}</li>
+                                </div>
+                                <li>  <img src="${imagenpais}" class="chicoDos"> </li>
+                              
+                                </ul>
+                                   
+                                 
+                                `
+                                     
+                        
+
+                            }
                             
                             // COMPRA
                             
@@ -124,7 +135,8 @@ const paises = async()=>{
                                 }
 
                                 const cotizador = document.querySelector('#cotizador');
-                                cotizador.innerHTML = '';
+                                cotizador.className = 'nolugar';
+
                             }
                             
                             
@@ -138,8 +150,8 @@ const paises = async()=>{
                                     cotizador.className = 'duplicar';
 
 
-                                    guardarStorage()
-
+                                    guardarStorage();
+                                    mostrarStorage();
                            
                                     
                                     
