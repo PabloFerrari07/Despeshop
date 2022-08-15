@@ -8,6 +8,7 @@
 .secTodo{
     height: 100vh;
     background-image: url(imagenes/portada/portada2.jpg.png);
+    width: 50%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,6 +28,10 @@
     border-radius: 15px;
 }
 
+.botonweb{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
 
 .cotizador{
     /* height: 800px; */
